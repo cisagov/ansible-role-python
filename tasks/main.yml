@@ -1,2 +1,15 @@
 ---
-# tasks file for skeleton
+# tasks file for python
+- name: Install python
+  package:
+    name:
+      - python
+      - python3
+  when: ansible_os_family == "Debian"
+
+- name: Install python
+  package:
+    name:
+      - python27
+      - python36
+  when: ansible_os_family == "RedHat"
