@@ -2,13 +2,17 @@
 galaxy_info:
   author: Jeremy Frasier
   description: Ansible role for installing Python
-  company: CISA NCATS
+  company: CISA Cyber Assessments
   license: CC0
   min_ansible_version: 2.0
   platforms:
     - name: Debian
       versions:
         - stretch
+        - buster
+    - name: Fedora
+      versions:
+        - 29
     - name: Amazon
       versions:
         - 2018.03
