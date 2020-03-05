@@ -8,11 +8,14 @@ galaxy_info:
   platforms:
     - name: Amazon
       versions:
-        - 2018.03
+        - 2
     - name: Debian
       versions:
         - stretch
         - buster
+        # Kali linux isn't an option here, but it is based on Debian
+        # testing
+        - bullseye
     - name: Fedora
       versions:
         - 29

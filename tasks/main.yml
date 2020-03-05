@@ -1,25 +1,18 @@
 ---
 # tasks file for python
-- name: Determine Python package names (Amazon)
-  set_fact:
-    package_names:
-      - python27
-      - python36
-  when: ansible_distribution == 'Amazon'
-
 - name: Determine Python package names (Debian)
   set_fact:
     package_names:
       - python
       - python3
-  when: ansible_distribution == 'Debian'
+  when: ansible_os_family == 'Debian' or ansible_os_family == 'Kali GNU/Linux'
 
 - name: Determine Python package names (Fedora)
   set_fact:
     package_names:
       - python2
       - python3
-  when: ansible_distribution == 'Fedora'
+  when: ansible_os_family == 'RedHat'
 
 - name: Install python
   package:
