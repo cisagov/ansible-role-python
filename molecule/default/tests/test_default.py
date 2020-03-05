@@ -12,9 +12,14 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 ).get_hosts("all")
 
 
-@pytest.mark.parametrize("pkg", ["python27", "python36"])
+@pytest.mark.parametrize("pkg", ["python", "python3"])
 def test_python_amazon(host, pkg):
-    """Test that the appropriate packages were installed."""
+    """Test that the appropriate packages were installed.
+
+    Amazon Linux is behind Fedora, so that is why we need a separate
+    test for that distribution.  If we tested an older version of
+    Fedora it would use this test as well.
+    """
     if host.system_info.distribution == "amzn":
         assert host.package(pkg).is_installed
 
