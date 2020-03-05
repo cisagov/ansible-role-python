@@ -12,7 +12,7 @@
     package_names:
       - python
       - python3
-  when: ansible_distribution == 'Debian'
+  when: ansible_os_family == "Debian" or ansible_os_family == "Kali GNU/Linux"
 
 - name: Determine Python package names (Fedora)
   set_fact:
@@ -23,4 +23,4 @@
 
 - name: Install python
   package:
-    name: '{{ package_names }}'
+    name: "{{ package_names }}"

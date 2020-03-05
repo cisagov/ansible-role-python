@@ -21,6 +21,8 @@ platforms:
   #   image: fedora:30
   - name: fedora31
     image: fedora:31
+  - name: kali
+    image: kalilinux/kali-rolling
 provisioner:
   name: ansible
   lint:

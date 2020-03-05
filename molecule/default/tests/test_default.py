@@ -22,7 +22,10 @@ def test_python_amazon(host, pkg):
 @pytest.mark.parametrize("pkg", ["python", "python3"])
 def test_python_debian(host, pkg):
     """Test that the appropriate packages were installed."""
-    if host.system_info.distribution == "debian":
+    if (
+        host.system_info.distribution == "debian"
+        or host.system_info.distribution == "kali"
+    ):
         assert host.package(pkg).is_installed
 
 
