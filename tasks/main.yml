@@ -1,18 +1,20 @@
 ---
 # tasks file for python
-- name: Determine Python package names (Debian)
-  set_fact:
-    package_names:
-      - python
-      - python3
-  when: ansible_os_family == 'Debian' or ansible_os_family == 'Kali GNU/Linux'
 
-- name: Determine Python package names (Fedora)
-  set_fact:
-    package_names:
-      - python2
-      - python3
-  when: ansible_os_family == 'RedHat'
+- name: Load var file with package names based on the OS type
+  include_vars: "{{ lookup('first_found', params) }}"
+  vars:
+    params:
+      files:
+        - "{{ ansible_distribution }}.yml"
+        - "{{ ansible_os_family }}.yml"
+        # The OS family and distribution for Kali is "Kali GNU/Linux",
+        # which is not an allowable file name in Linux due to the
+        # slash.  We will allow Kali to fall through and use the
+        # Debian vars file.
+        - Debian.yml
+      paths:
+        - "vars"
 
 - name: Install python
   package:
