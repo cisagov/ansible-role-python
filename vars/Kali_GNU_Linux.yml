@@ -1,0 +1,8 @@
+---
+# vars file for Kali
+
+# The Python package names.  These are identical to those for Debian
+# 11.
+package_names:
+  - python
+  - python3
