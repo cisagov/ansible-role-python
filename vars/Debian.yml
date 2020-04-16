@@ -3,5 +3,4 @@
 
 # The Python package names
 package_names:
-  - python
   - python3

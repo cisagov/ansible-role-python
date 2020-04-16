@@ -1,7 +1,0 @@
----
-# vars file for Amazon Linux
-
-# The Python package names
-package_names:
-  - python2
-  - python3

@@ -1,7 +1,1 @@
----
-# vars file for RedHat
-
-# The Python package names
-package_names:
-  - python2
-  - python3
+Debian.yml
