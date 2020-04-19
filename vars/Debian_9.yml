@@ -5,5 +5,5 @@
 # since the CyHy AMIs (and only the CyHy AMIs) are built on it.
 # Therefore it needs python2 support.
 package_names:
-  - python2
+  - python
   - python3
