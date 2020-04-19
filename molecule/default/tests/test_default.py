@@ -13,7 +13,7 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 
 @pytest.mark.parametrize("pkg", ["python3"])
-def test_python_debian(host, pkg):
+def test_python(host, pkg):
     """Test that the appropriate packages were installed."""
     if (
         (
@@ -28,7 +28,7 @@ def test_python_debian(host, pkg):
 
 
 @pytest.mark.parametrize("pkg", ["python", "python3"])
-def test_python_fedora(host, pkg):
+def test_python_debian_9(host, pkg):
     """Test that the appropriate packages were installed."""
     if host.system_info.distribution == "debian" and host.system_info.release == "9.12":
         assert host.package(pkg).is_installed
