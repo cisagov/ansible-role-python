@@ -1,0 +1,9 @@
+---
+# vars file for Debian 9
+
+# The Python package names.  We treat Debian 9 as a special case,
+# since the CyHy AMIs (and only the CyHy AMIs) are built on it.
+# Therefore it needs python2 support.
+package_names:
+  - python
+  - python3
