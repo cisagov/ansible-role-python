@@ -1,8 +1,8 @@
 ---
-# vars file for RedHat
+# vars file for Amazon Linux
 
 # The Python package names
 package_names:
   - python3
   # This ensures that Ansible can install packages using python3
-  - python3-dnf
+  - python3-rpm

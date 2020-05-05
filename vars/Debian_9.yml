@@ -9,5 +9,5 @@ package_names:
   - python3
   # This ensures that Ansible can install packages using python2 or
   # python3
-  - python2-apt
+  - python-apt
   - python3-apt
