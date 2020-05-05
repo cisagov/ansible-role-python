@@ -4,3 +4,5 @@
 # The Python package names
 package_names:
   - python3
+  # This ensures that Ansible can install packages using python3
+  - python3-apt
