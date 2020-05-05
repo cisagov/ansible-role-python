@@ -27,6 +27,37 @@ def test_python(host, pkg):
         assert host.package(pkg).is_installed
 
 
+@pytest.mark.parametrize("pkg", ["python-apt"])
+def test_python_apt(host, pkg):
+    """Test that the appropriate packages were installed."""
+    if host.system_info.distribution == "debian" and host.system_info.release == "9.12":
+        assert host.package(pkg).is_installed
+
+
+@pytest.mark.parametrize("pkg", ["python3-apt"])
+def test_python3_apt(host, pkg):
+    """Test that the appropriate packages were installed."""
+    if (
+        host.system_info.distribution == "debian"
+        or host.system_info.distribution == "kali"
+    ):
+        assert host.package(pkg).is_installed
+
+
+@pytest.mark.parametrize("pkg", ["python3-dnf"])
+def test_python3_dnf(host, pkg):
+    """Test that the appropriate packages were installed."""
+    if host.system_info.distribution == "redhat":
+        assert host.package(pkg).is_installed
+
+
+@pytest.mark.parametrize("pkg", ["python3-rpm"])
+def test_python3_rpm(host, pkg):
+    """Test that the appropriate packages were installed."""
+    if host.system_info.distribution == "amzn":
+        assert host.package(pkg).is_installed
+
+
 @pytest.mark.parametrize("pkg", ["python", "python3"])
 def test_python_debian_9(host, pkg):
     """Test that the appropriate packages were installed."""
