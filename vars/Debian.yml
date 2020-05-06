@@ -6,3 +6,5 @@ package_names:
   - python3
   # This ensures that Ansible can install packages using python3
   - python3-apt
+  # This provides the /usr/bin/python3 symlink
+  - python3-minimal
