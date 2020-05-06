@@ -27,14 +27,14 @@ def test_python(host, pkg):
         assert host.package(pkg).is_installed
 
 
-@pytest.mark.parametrize("pkg", ["python-apt"])
+@pytest.mark.parametrize("pkg", ["python-apt", "python-minimal"])
 def test_python_apt(host, pkg):
     """Test that the appropriate packages were installed."""
     if host.system_info.distribution == "debian" and host.system_info.release == "9.12":
         assert host.package(pkg).is_installed
 
 
-@pytest.mark.parametrize("pkg", ["python3-apt"])
+@pytest.mark.parametrize("pkg", ["python3-apt", "python3-minimal"])
 def test_python3_apt(host, pkg):
     """Test that the appropriate packages were installed."""
     if (
