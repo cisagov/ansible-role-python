@@ -11,3 +11,7 @@ package_names:
   # python3
   - python-apt
   - python3-apt
+  # These packages provide the /usr/bin/python and /usr/bin/python3
+  # symlinks
+  - python-minimal
+  - python3-minimal
