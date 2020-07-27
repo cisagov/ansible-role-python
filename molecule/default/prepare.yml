@@ -2,5 +2,5 @@
 - name: Import upgrade playbook
   import_playbook: upgrade.yml
 
-- name: Import python playbook
-  import_playbook: python.yml
+- name: Import pip playbook
+  import_playbook: pip.yml
