@@ -33,6 +33,6 @@ galaxy_info:
         - xenial
         - bionic
         - focal
-  role_name: skeleton
+  role_name: python
 
 dependencies: []
