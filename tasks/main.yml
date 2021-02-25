@@ -2,7 +2,7 @@
 # tasks file for python
 
 - name: Load var file with package names based on the OS type
-  include_vars: "{{ lookup('first_found', params) }}"
+  ansible.builtin.include_vars: "{{ lookup('first_found', params) }}"
   vars:
     params:
       files:
@@ -13,5 +13,5 @@
         - "{{ role_path }}/vars"
 
 - name: Install python
-  package:
+  ansible.builtin.package:
     name: '{{ package_names }}'
