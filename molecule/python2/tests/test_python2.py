@@ -11,23 +11,6 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 ).get_hosts("all")
 
 
-def test_python3_packages(host):
-    """Test that the appropriate Python 3 packages were installed."""
-    if host.system_info.distribution in ["amzn"]:
-        for p in ["python3", "python3-rpm"]:
-            assert host.package(p).is_installed
-    elif host.system_info.distribution in ["debian", "kali", "ubuntu"]:
-        for p in ["python3", "python3-apt", "python3-minimal"]:
-            assert host.package(p).is_installed
-    elif host.system_info.distribution in "fedora":
-        for p in ["python3", "python3-dnf"]:
-            assert host.package(p).is_installed
-    else:
-        assert (
-            False
-        ), f"Linux distribution {host.system_info.distribution} is not supported."
-
-
 def test_python2_packages(host):
     """Test that the appropriate Python 2 packages were installed."""
     if host.system_info.distribution in ["amzn"]:
