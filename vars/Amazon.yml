@@ -2,6 +2,8 @@
 # The Python 2 package names
 python2_package_names:
   - python
+  # This ensures that Ansible can install packages using python2
+  - python2-rpm
 
 # The Python 3 package names
 python3_package_names:
