@@ -16,7 +16,7 @@ apply.
 
 | Variable | Description | Default | Required |
 |----------|-------------|---------|----------|
-| install_python2 | A boolean indicating whether or not to install Python 2 alongside Python 3. | `false` | No |
+| install_python2 | A boolean indicating whether or not to install Python 2 alongside Python 3.  Where possible, we also install the necessary dependencies to use Python 2 as Ansible's discovered Python; unfortunately, this is only possible on Amazon Linux 2, Debian Stretch, Debian Buster, and Ubuntu Bionic. | `false` | No |
 
 ## Dependencies ##
 
