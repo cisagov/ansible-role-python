@@ -1,17 +1,16 @@
 ---
-# vars file for Debian 9
-
-# The Python package names.  We treat Debian 9 as a special case,
-# since the CyHy AMIs (and only the CyHy AMIs) are built on it.
-# Therefore it needs python2 support.
-package_names:
+# The Python 2 package names
+python2_package_names:
   - python
-  - python3
-  # This ensures that Ansible can install packages using python2 or
-  # python3
+  # This ensures that Ansible can install packages using python2
   - python-apt
-  - python3-apt
-  # These packages provide the /usr/bin/python and /usr/bin/python3
-  # symlinks
+  # This package provides the /usr/bin/python symlink
   - python-minimal
+
+# The Python 3 package names
+python3_package_names:
+  - python3
+  # This ensures that Ansible can install packages using python3
+  - python3-apt
+  # This provides the /usr/bin/python3 symlink
   - python3-minimal

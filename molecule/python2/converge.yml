@@ -1,0 +1,9 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: Include ansible-role-python
+      ansible.builtin.include_role:
+        name: ansible-role-python
+      vars:
+        install_python2: yes

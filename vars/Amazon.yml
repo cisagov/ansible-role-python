@@ -1,8 +1,12 @@
 ---
-# vars file for Amazon Linux
+# The Python 2 package names
+python2_package_names:
+  - python
+  # This ensures that Ansible can install packages using python2
+  - python2-rpm
 
-# The Python package names
-package_names:
+# The Python 3 package names
+python3_package_names:
   - python3
   # This ensures that Ansible can install packages using python3
   - python3-rpm

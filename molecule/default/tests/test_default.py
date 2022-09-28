@@ -4,7 +4,6 @@
 import os
 
 # Third-Party Libraries
-import pytest
 import testinfra.utils.ansible_runner
 
 testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
@@ -12,54 +11,18 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 ).get_hosts("all")
 
 
-@pytest.mark.parametrize("pkg", ["python3"])
-def test_python(host, pkg):
-    """Test that the appropriate packages were installed."""
-    if (
-        (
-            host.system_info.distribution == "debian"
-            and host.system_info.release != "9.12"
-        )
-        or host.system_info.distribution == "redhat"
-        or host.system_info.distribution == "kali"
-        or host.system_info.distribution == "amzn"
-    ):
-        assert host.package(pkg).is_installed
-
-
-@pytest.mark.parametrize("pkg", ["python-apt", "python-minimal"])
-def test_python_apt(host, pkg):
-    """Test that the appropriate packages were installed."""
-    if host.system_info.distribution == "debian" and host.system_info.release == "9.12":
-        assert host.package(pkg).is_installed
-
-
-@pytest.mark.parametrize("pkg", ["python3-apt", "python3-minimal"])
-def test_python3_apt(host, pkg):
-    """Test that the appropriate packages were installed."""
-    if (
-        host.system_info.distribution == "debian"
-        or host.system_info.distribution == "kali"
-    ):
-        assert host.package(pkg).is_installed
-
-
-@pytest.mark.parametrize("pkg", ["python3-dnf"])
-def test_python3_dnf(host, pkg):
-    """Test that the appropriate packages were installed."""
-    if host.system_info.distribution == "redhat":
-        assert host.package(pkg).is_installed
-
-
-@pytest.mark.parametrize("pkg", ["python3-rpm"])
-def test_python3_rpm(host, pkg):
-    """Test that the appropriate packages were installed."""
-    if host.system_info.distribution == "amzn":
-        assert host.package(pkg).is_installed
-
-
-@pytest.mark.parametrize("pkg", ["python", "python3"])
-def test_python_debian_9(host, pkg):
-    """Test that the appropriate packages were installed."""
-    if host.system_info.distribution == "debian" and host.system_info.release == "9.12":
-        assert host.package(pkg).is_installed
+def test_python3_packages(host):
+    """Test that the appropriate Python 3 packages were installed."""
+    if host.system_info.distribution in ["amzn"]:
+        for p in ["python3", "python3-rpm"]:
+            assert host.package(p).is_installed
+    elif host.system_info.distribution in ["debian", "kali", "ubuntu"]:
+        for p in ["python3", "python3-apt", "python3-minimal"]:
+            assert host.package(p).is_installed
+    elif host.system_info.distribution in "fedora":
+        for p in ["python3", "python3-dnf"]:
+            assert host.package(p).is_installed
+    else:
+        assert (
+            False
+        ), f"Linux distribution {host.system_info.distribution} is not supported."
