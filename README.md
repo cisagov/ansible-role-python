@@ -1,8 +1,7 @@
 # ansible-role-python #
 
 [![GitHub Build Status](https://github.com/cisagov/ansible-role-python/workflows/build/badge.svg)](https://github.com/cisagov/ansible-role-python/actions)
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/cisagov/ansible-role-python.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/cisagov/ansible-role-python/alerts/)
-[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/cisagov/ansible-role-python.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/cisagov/ansible-role-python/context:python)
+[![CodeQL](https://github.com/cisagov/ansible-role-python/workflows/CodeQL/badge.svg)](https://github.com/cisagov/ansible-role-python/actions/workflows/codeql-analysis.yml)
 
 An Ansible role for installing [Python](https://www.python.org/).
 
@@ -30,8 +29,10 @@ Here's how to use it in a playbook:
 - hosts: all
   become: yes
   become_method: sudo
-  roles:
-    - python
+  tasks:
+    - name: Include skeleton
+      ansible.builtin.include_role:
+        name: python
 ```
 
 ## Contributing ##
