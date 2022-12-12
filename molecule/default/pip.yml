@@ -1,7 +1,0 @@
----
-- hosts: all
-  name: Install pip3
-  become: yes
-  become_method: sudo
-  roles:
-    - pip

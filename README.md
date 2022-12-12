@@ -1,8 +1,7 @@
 # ansible-role-python #
 
 [![GitHub Build Status](https://github.com/cisagov/ansible-role-python/workflows/build/badge.svg)](https://github.com/cisagov/ansible-role-python/actions)
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/cisagov/ansible-role-python.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/cisagov/ansible-role-python/alerts/)
-[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/cisagov/ansible-role-python.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/cisagov/ansible-role-python/context:python)
+[![CodeQL](https://github.com/cisagov/ansible-role-python/workflows/CodeQL/badge.svg)](https://github.com/cisagov/ansible-role-python/actions/workflows/codeql-analysis.yml)
 
 An Ansible role for installing [Python](https://www.python.org/).
 
@@ -16,7 +15,7 @@ apply.
 
 | Variable | Description | Default | Required |
 |----------|-------------|---------|----------|
-| install_python2 | A boolean indicating whether or not to install Python 2 alongside Python 3.  Where possible, we also install the necessary dependencies to use Python 2 as Ansible's discovered Python; unfortunately, this is only possible on Amazon Linux 2, Debian Stretch, Debian Buster, and Ubuntu Bionic. | `false` | No |
+| install_python2 | A boolean indicating whether or not to install Python 2 alongside Python 3.  Where possible, we also install the necessary dependencies to use Python 2 as Ansible's discovered Python; unfortunately, this is only possible on Amazon Linux 2, Debian Stretch, Debian Buster, and Ubuntu Bionic.  Note also that no matter the value of this variable, Python 2 will not be installed on Debian Bookworm; this is because the corresponding system packages are unavailable for that platform. | `false` | No |
 
 ## Dependencies ##
 
@@ -30,8 +29,10 @@ Here's how to use it in a playbook:
 - hosts: all
   become: yes
   become_method: sudo
-  roles:
-    - python
+  tasks:
+    - name: Install python
+      ansible.builtin.include_role:
+        name: python
 ```
 
 ## Contributing ##
