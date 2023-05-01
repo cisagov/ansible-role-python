@@ -16,9 +16,11 @@ lint: |
   ansible-lint
   flake8
 platforms:
-  - image: amazonlinux:2023
-    name: amazonlinux2023
-    platform: amd64
+  # Amazon Linux 2023 does not offer Python 2:
+  # https://docs.aws.amazon.com/linux/al2023/release-notes/all-packages-al2023-20230419.html
+  # - image: amazonlinux:2023
+  #   name: amazonlinux2023
+  #   platform: amd64
   - image: debian:buster-slim
     name: debian10
     platform: amd64
