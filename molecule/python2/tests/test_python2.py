@@ -13,11 +13,8 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 def test_python2_packages(host):
     """Test that the appropriate Python 2 packages were installed."""
-    if host.system_info.distribution in ["amzn"]:
-        for p in ["python", "python2-rpm"]:
-            assert host.package(p).is_installed
-    elif host.system_info.distribution in ["debian", "kali", "ubuntu"]:
-        if host.system_info.codename in ["bionic", "stretch"]:
+    if host.system_info.distribution in ["debian", "kali", "ubuntu"]:
+        if host.system_info.codename in ["bionic"]:
             for p in ["python", "python-apt", "python-minimal"]:
                 assert host.package(p).is_installed
         elif host.system_info.codename in ["buster"]:
@@ -32,6 +29,9 @@ def test_python2_packages(host):
     elif host.system_info.distribution in ["fedora"]:
         for p in ["python2.7"]:
             assert host.package(p).is_installed
+    elif host.system_info.distribution in ["amzn"]:
+        # Python 2 is not installed in this case
+        pass
     else:
         assert (
             False
