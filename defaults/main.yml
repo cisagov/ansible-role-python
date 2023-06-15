@@ -1,3 +1,3 @@
 ---
 # Whether or not to install Python 2 alongside Python 3
-install_python2: false
+python_install_python2: false

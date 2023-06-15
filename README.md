@@ -15,7 +15,7 @@ apply.
 
 | Variable | Description | Default | Required |
 |----------|-------------|---------|----------|
-| install_python2 | A boolean indicating whether or not to install Python 2 alongside Python 3.  Where possible, we also install the necessary dependencies to use Python 2 as Ansible's discovered Python; unfortunately, this is only possible on Amazon Linux 2, Debian Stretch, Debian Buster, and Ubuntu Bionic.  Note also that no matter the value of this variable, Python 2 will not be installed on Debian Bookworm; this is because the corresponding system packages are unavailable for that platform. | `false` | No |
+| python_install_python2 | A boolean indicating whether or not to install Python 2 alongside Python 3.  Where possible, we also install the necessary dependencies to use Python 2 as Ansible's discovered Python; unfortunately, this is only possible on Amazon Linux 2, Debian Stretch, Debian Buster, and Ubuntu Bionic.  Note also that no matter the value of this variable, Python 2 will not be installed on Debian Bookworm; this is because the corresponding system packages are unavailable for that platform. | `false` | No |
 
 ## Dependencies ##
 
@@ -55,4 +55,4 @@ with this waiver of copyright interest.
 
 ## Author Information ##
 
-Shane Frasier - <jeremy.frasier@trio.dhs.gov>
+Shane Frasier - <jeremy.frasier@gwe.cisa.dhs.gov>
