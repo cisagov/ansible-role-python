@@ -16,6 +16,7 @@ apply.
 | Variable | Description | Default | Required |
 |----------|-------------|---------|----------|
 | python_install_python2 | A boolean indicating whether or not to install Python 2 alongside Python 3.  Where possible, we also install the necessary dependencies to use Python 2 as Ansible's discovered Python; unfortunately, this is only possible on Amazon Linux 2, Debian Stretch, Debian Buster, and Ubuntu Bionic.  Note also that no matter the value of this variable, Python 2 will not be installed on Debian Bookworm; this is because the corresponding system packages are unavailable for that platform. | `false` | No |
+| python_install_development_dependencies | A boolean indicating whether or not to install development dependencies, such as the Python headers.  These dependencies are sometimes required, e.g., when one is required to build a wheel for a Python package. | `false` | No |
 
 ## Dependencies ##
 

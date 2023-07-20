@@ -5,8 +5,16 @@ python2_package_names:
   # This ensures that Ansible can install packages using python2
   - python2-rpm
 
+# The Python 2 development package names
+python2_development_package_names:
+  - python-devel
+
 # The Python 3 package names
 python3_package_names:
   - python3
   # This ensures that Ansible can install packages using python3
   - python3-rpm
+
+# The Python 3 development package names
+python3_development_package_names:
+  - python3-devel

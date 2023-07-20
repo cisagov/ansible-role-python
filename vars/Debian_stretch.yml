@@ -7,6 +7,10 @@ python2_package_names:
   # This package provides the /usr/bin/python symlink
   - python-minimal
 
+# The Python 2 development package names
+python2_development_package_names:
+  - python-dev
+
 # The Python 3 package names
 python3_package_names:
   - python3
@@ -14,3 +18,7 @@ python3_package_names:
   - python3-apt
   # This provides the /usr/bin/python3 symlink
   - python3-minimal
+
+# The Python 3 development package names
+python3_development_package_names:
+  - python3-dev

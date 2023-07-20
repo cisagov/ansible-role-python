@@ -14,7 +14,21 @@
   ansible.builtin.package:
     name: "{{ python3_package_names }}"
 
+- name: Install Python 3 development dependencies
+  ansible.builtin.package:
+    name: "{{ python3_development_package_names }}"
+  when:
+    - python_install_development_dependencies
+
 - name: Install Python 2
   ansible.builtin.package:
     name: "{{ python2_package_names }}"
-  when: python_install_python2
+  when:
+    - python_install_python2
+
+- name: Install Python 2 development dependencies
+  ansible.builtin.package:
+    name: "{{ python2_development_package_names }}"
+  when:
+    - python_install_python2
+    - python_install_development_dependencies
