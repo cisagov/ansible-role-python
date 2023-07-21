@@ -12,7 +12,7 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 
 def test_dev_dependency_packages(host):
-    """Test that the appropriate Python devepopment packages were installed."""
+    """Test that the appropriate Python development packages were installed."""
     if host.system_info.distribution in ["debian", "kali", "ubuntu"]:
         for p in ["python3-dev"]:
             assert host.package(p).is_installed
