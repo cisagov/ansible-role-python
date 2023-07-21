@@ -1,4 +1,8 @@
 ---
+# The Python 2 development package names
+python2_development_package_names:
+#   - python2-dev
+
 # The Python 2 package names
 python2_package_names:
   # The python2 and python2-minimal packages do not exist on Debian
@@ -14,9 +18,9 @@ python2_package_names:
   # This package provides the /usr/bin/python symlink
   # - python2-minimal
 
-# The Python 2 development package names
-python2_development_package_names:
-#   - python2-dev
+# The Python 3 development package names
+python3_development_package_names:
+  - python3-dev
 
 # The Python 3 package names
 python3_package_names:
@@ -25,7 +29,3 @@ python3_package_names:
   - python3-apt
   # This provides the /usr/bin/python3 symlink
   - python3-minimal
-
-# The Python 3 development package names
-python3_development_package_names:
-  - python3-dev
