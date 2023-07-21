@@ -107,6 +107,7 @@ jobs:
       matrix:
         scenario:
           - default
+          - dev_dependencies
           - python2
     runs-on: ubuntu-latest
     steps:

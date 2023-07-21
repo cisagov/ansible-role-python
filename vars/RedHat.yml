@@ -1,7 +1,15 @@
 ---
+# The Python 2 development package names
+python2_development_package_names:
+  - python2.7-devel
+
 # The Python 2 package names
 python2_package_names:
   - python2.7
+
+# The Python 3 development package names
+python3_development_package_names:
+  - python3-devel
 
 # The Python 3 package names
 python3_package_names:

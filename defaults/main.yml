@@ -1,3 +1,6 @@
 ---
+# Whether or not to install the Python development dependencies
+python_install_development_dependencies: false
+
 # Whether or not to install Python 2 alongside Python 3
 python_install_python2: false
