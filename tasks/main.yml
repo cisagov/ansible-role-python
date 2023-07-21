@@ -30,5 +30,5 @@
   ansible.builtin.package:
     name: "{{ python2_development_package_names }}"
   when:
-    - python_install_python2
     - python_install_development_dependencies
+    - python_install_python2
