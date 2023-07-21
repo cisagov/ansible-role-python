@@ -107,8 +107,8 @@ jobs:
       matrix:
         scenario:
           - default
-          - python2
           - dev_dependencies
+          - python2
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
