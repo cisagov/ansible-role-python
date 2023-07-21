@@ -15,7 +15,7 @@ python2_package_names:
   # - python2-minimal
 
 # The Python 2 development package names
-# python2_development_package_names:
+python2_development_package_names:
 #   - python2-dev
 
 # The Python 3 package names
