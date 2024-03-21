@@ -1,13 +1,11 @@
 ---
+# Amazon Linux 2023 does not support Python 2.
+
 # The Python 2 development package names
-python2_development_package_names:
-  - python-devel
+python2_development_package_names: []
 
 # The Python 2 package names
-python2_package_names:
-  - python
-  # This ensures that Ansible can install packages using python2
-  - python2-rpm
+python2_package_names: []
 
 # The Python 3 development package names
 python3_development_package_names:
