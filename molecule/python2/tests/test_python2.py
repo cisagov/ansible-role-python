@@ -20,7 +20,7 @@ def test_python2_packages(host):
         elif host.system_info.codename in ["buster"]:
             for p in ["python2", "python-apt", "python2-minimal"]:
                 assert host.package(p).is_installed
-        elif host.system_info.codename in ["bookworm"]:
+        elif host.system_info.codename in ["bookworm", "trixie"]:
             # Python 2 is not installed in this case
             pass
         else:
