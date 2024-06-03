@@ -17,7 +17,7 @@ def test_python2_packages(host):
         if host.system_info.codename in ["buster"]:
             for p in ["python2", "python-apt", "python2-minimal"]:
                 assert host.package(p).is_installed
-        elif host.system_info.codename in ["bullseye"]:
+        elif host.system_info.codename in ["bullseye", "focal", "jammy"]:
             for p in ["python2", "python2-minimal"]:
                 assert host.package(p).is_installed
         else:
