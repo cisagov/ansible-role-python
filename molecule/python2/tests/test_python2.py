@@ -27,8 +27,12 @@ def test_python2_packages(host):
         for p in ["python2", "python2-minimal"]:
             assert host.package(p).is_installed
     elif host.system_info.distribution in ["fedora"]:
-        for p in ["python2.7"]:
-            assert host.package(p).is_installed
+        if host.system_info.codename in ["39", "40"]:
+            for p in ["python2.7"]:
+                assert host.package(p).is_installed
+        else:
+            # Python 2 is not installed in this case
+            pass
     elif host.system_info.distribution in ["amzn"]:
         # Python 2 is not installed in this case
         pass
