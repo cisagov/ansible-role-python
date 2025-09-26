@@ -20,13 +20,8 @@ def test_python3_packages(host):
         for p in ["python3", "python3-dnf"]:
             assert host.package(p).is_installed
     elif host.system_info.distribution in ["fedora"]:
-        if host.system_info.codename in ["39", "40"]:
-            for p in ["python3", "python3-dnf"]:
-                assert host.package(p).is_installed
-        # Fedora uses the dnf5 package manager starting with Fedora 41.
-        else:
-            for p in ["python3", "python3-libdnf5"]:
-                assert host.package(p).is_installed
+        for p in ["python3", "python3-libdnf5"]:
+            assert host.package(p).is_installed
     else:
         assert (
             False
