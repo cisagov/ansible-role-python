@@ -1,6 +1,7 @@
 # ansible-role-python #
 
 [![GitHub Build Status](https://github.com/cisagov/ansible-role-python/workflows/build/badge.svg)](https://github.com/cisagov/ansible-role-python/actions)
+[![License](https://img.shields.io/github/license/cisagov/ansible-role-python)](https://spdx.org/licenses/)
 [![CodeQL](https://github.com/cisagov/ansible-role-python/workflows/CodeQL/badge.svg)](https://github.com/cisagov/ansible-role-python/actions/workflows/codeql-analysis.yml)
 
 An Ansible role for installing [Python](https://www.python.org/).
