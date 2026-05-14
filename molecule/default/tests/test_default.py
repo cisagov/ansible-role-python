@@ -23,6 +23,6 @@ def test_python3_packages(host):
         for p in ["python3", "python3-libdnf5"]:
             assert host.package(p).is_installed
     else:
-        assert (
-            False
-        ), f"Linux distribution {host.system_info.distribution} is not supported."
+        raise AssertionError(
+            f"Linux distribution {host.system_info.distribution} " "is not supported."
+        )
