@@ -20,6 +20,6 @@ def test_dev_dependency_packages(host):
         for p in ["python3-devel"]:
             assert host.package(p).is_installed
     else:
-        assert (
-            False
-        ), f"Linux distribution {host.system_info.distribution} is not supported."
+        raise AssertionError(
+            f"Linux distribution {host.system_info.distribution} " "is not supported."
+        )

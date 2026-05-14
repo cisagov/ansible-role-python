@@ -30,6 +30,6 @@ def test_python2_packages(host):
         # Python 2 is not installed in this case
         pass
     else:
-        assert (
-            False
-        ), f"Linux distribution {host.system_info.distribution} is not supported."
+        raise AssertionError(
+            f"Linux distribution {host.system_info.distribution} " "is not supported."
+        )
